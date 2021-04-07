@@ -1,2 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #121e24;
+}
+
+body {
+ 
+  background: #fff;
+  font-size: 1.2em;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+input {
+    appearance: none;
+    border-style: none;
+    padding: 1rem 2rem;
+    letter-spacing: 1px;
+    outline: none;
+}
+
+input[type=button] {
+    background: #0078b4;
+    border: 1px solid #0078b4;
+    
+    color: #fff;
+    text-transform: uppercase;
+    height: 5rem;
+    line-height: 1.5;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2em;
+}
+
+input[type=file] {
+    background: #fff;
+}
+
+table {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  text-align: center;
+  
+  border-collapse: collapse;
+  font-size: 
+}
+
+table tr:first-child td {
+  background: black;
+  border: 5px black solid;
+  color: #fff;
+}
+
+tr td {
+  padding: 10px;
+  border: 1px black solid;
+}
+
+tbody tr:nth-child(odd) {
+  background: #eee;
+}
+
+@media print {
+  
+   
+    @page
+   {
+    size: 11in 8.5in;
+    size: landscape;
+  }
+
+  input {
+      display: none;
+  }
+  
+    }
+    
 
 /*# sourceMappingURL=/styles.8986bff4.css.map */

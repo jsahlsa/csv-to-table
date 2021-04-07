@@ -118,7 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-document.getElementById("app").innerHTML = "\n<h1>Hello Vanilla!</h1>\n<div>\n  We use the same configuration as Parcel to bundle this sandbox, you can find more\n  info about Parcel \n  <a href=\"https://parceljs.org\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>\n  <input type=\"file\" />\n  <input type=\"button\" value=\"upload\" id=\"upload\" /> \n  <div id=\"table-wrapper\">\n  </div>\n</div>\n";
+document.getElementById("app").innerHTML = "\n<h1>5584 Parcel Inventory</h1>\n<div>\n  \n  <input type=\"file\" />\n  <input type=\"button\" value=\"upload CSV\" id=\"upload\" /> \n  <div id=\"table-wrapper\">\n  </div>\n</div>\n";
 var uploadButton = document.querySelector("#upload");
 var fileUpload = document.querySelector("input");
 
@@ -146,6 +146,7 @@ function upload() {
       cells.splice(12, 5);
       cells.splice(6, 4);
       cells.splice(1, 4);
+      cells.push("       ", "       ");
 
       if (cells.length > 1) {
         var row = table.insertRow(-1);
@@ -192,7 +193,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46269" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35403" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
