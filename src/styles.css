@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 
 html, body {
     box-sizing: border-box;
@@ -24,6 +24,7 @@ body {
 
 h1 {
     font-size: 4rem;
+    font-weight: 300;
 }
 
 input {
@@ -45,10 +46,39 @@ input[type=button] {
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: 2em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+input[type=button]:hover {
+    background-color: #00689c;
 }
 
 input[type=file] {
-    background: #fff;
+    display: none;
+}
+
+.custom-file-input {
+    color: #0078b4;
+    text-transform: uppercase;
+    height: 5rem;
+    line-height: 1.5;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2em;
+    cursor: pointer;
+    appearance: none;
+    border-style: none;
+    padding: 1rem 2rem;
+    letter-spacing: 1px;
+    outline: none;
+    border: 2px solid #0078b4;
+    margin: 3rem 3rem 0 0;
+    transition: background-color 0.2s;
+}
+
+.custom-file-input:hover {
+    background-color: #f2f8fb;
 }
 
 table {
@@ -58,12 +88,12 @@ table {
   text-align: center;
   
   border-collapse: collapse;
-  font-size: 
+  font-size: 14px;
 }
 
 table tr:first-child td {
   background: black;
-  border: 5px black solid;
+ 
   color: #fff;
 }
 
@@ -76,6 +106,23 @@ tbody tr:nth-child(odd) {
   background: #eee;
 }
 
+/* add signature and room # info to table */
+
+table tbody tr:first-child td:nth-child(8) {
+   padding: 0 5em;
+}
+
+table tbody tr:first-child td:nth-child(8):before {
+   content: "Signature";
+}
+
+table tbody tr:first-child td:nth-child(9):before {
+   content: "Room #";
+}
+
+/* header labels */
+
+
 @media print {
   
    
@@ -86,6 +133,10 @@ tbody tr:nth-child(odd) {
   }
 
   input {
+      display: none;
+  }
+
+  .custom-file-input {
       display: none;
   }
   

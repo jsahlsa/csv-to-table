@@ -118,9 +118,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-document.getElementById("app").innerHTML = "\n<h1>5584 Parcel Inventory</h1>\n<div>\n  \n  <input type=\"file\" />\n  <input type=\"button\" value=\"upload CSV\" id=\"upload\" /> \n  <div id=\"table-wrapper\">\n  </div>\n</div>\n";
+document.getElementById("app").innerHTML = "\n<h1>Esmeralda Package Inventory</h1>\n<div>\n  <label for=\"file-input\" class=\"custom-file-input\">Upload CSV\n  <input type=\"file\" id=\"file-input\" />\n  </label>\n  <input type=\"button\" value=\"Export\" id=\"upload\" /> \n  <div id=\"table-wrapper\">\n  </div>\n</div>\n";
 var uploadButton = document.querySelector("#upload");
 var fileUpload = document.querySelector("input");
+var fileInput = document.querySelector('.custom-file-input');
 
 function upload() {
   var file = fileUpload.files[0];
@@ -158,12 +159,32 @@ function upload() {
       }
     }
 
+    for (var _i = 0; _i < table.rows.length; _i++) {
+      var carrier = table.rows[0].cells[0];
+      var group = table.rows[0].cells[1];
+      var recipient = table.rows[0].cells[2];
+      var sender = table.rows[0].cells[3];
+      var location = table.rows[0].cells[4];
+      var tracking = table.rows[0].cells[5];
+      var pounds = table.rows[0].cells[6];
+      carrier.textContent = 'Carrier';
+      group.textContent = 'Group';
+      recipient.textContent = 'Recipient';
+      sender.textContent = 'Sender';
+      location.textContent = 'Loc.';
+      tracking.textContent = 'Tracking #';
+      pounds.textContent = 'LBs';
+    }
+
     var tableContainer = document.getElementById("table-wrapper");
     tableContainer.innerHTML = "";
     tableContainer.appendChild(table);
   };
 }
 
+fileInput.addEventListener('change', function () {
+  fileInput.textContent = "uploaded";
+});
 uploadButton.addEventListener("click", upload);
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -193,7 +214,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35403" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46603" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
